@@ -1,0 +1,10 @@
+# dependencies
+/node_modules
+
+# typescript
+/typings
+
+# distributions
+/dist
+
+npm-debug.log
