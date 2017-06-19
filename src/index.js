@@ -188,16 +188,14 @@ class VisibleTodoList extends Component {
 
 let nextTodoId = 0;
 const TodoApp = () => (
-    <div>
-      <AddTodo />
-      <VisibleTodoList />
-      <Footer />
-    </div>
-  )
+  <div>
+    <AddTodo />
+    <VisibleTodoList />
+    <Footer />
+  </div>
+)
 
-const render = () => {
-  ReactDOM.render(
-    <TodoApp />,
-    document.getElementById('root')
-  );
-};
+ReactDOM.render(
+  <TodoApp />,
+  document.getElementById('root')
+);
