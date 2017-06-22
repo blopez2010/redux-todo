@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import todoApp from './todoReducer';
+import todoApp from './store/todoReducer';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
