@@ -1,8 +1,6 @@
-const toggleTodo = (todo) => {
-  return {
-    ...todo,
-    completed: !todo.completed
-  };
-}
+const toggleTodo = (todo) => ({
+  ...todo,
+  completed: !todo.completed
+})
 
 export default toggleTodo;
