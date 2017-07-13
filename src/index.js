@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import todoApp from './store/todoReducer';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
+import throttle from 'lodash/throttle';
 
 // Components
 import Todo from './components/todo';
@@ -13,6 +14,21 @@ import FilterLink from './components/filterLink';
 import Footer from './components/footer';
 import AddTodo from './components/addTodo';
 
+// State
+import { loadState, saveState } from './localStorage';
+
+const persistedState = loadState();
+const store = createStore(
+  todoApp,
+  persistedState
+);
+
+store.subscribe(throttle(() => {
+  saveState({
+    todos: store.getState().todos
+  });
+}, 1000));
+
 const TodoApp = () => (
   <div>
     <AddTodo />
@@ -22,7 +38,7 @@ const TodoApp = () => (
 )
 
 ReactDOM.render(
-  <Provider store={createStore(todoApp)}>
+  <Provider store={store}>
     <TodoApp />
   </Provider>,
   document.getElementById('root')

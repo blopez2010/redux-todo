@@ -4,7 +4,7 @@
     "description": "Todo List",
     "main": "index.js",
     "scripts": {
-        "devServer": "webpack-dev-server --config webpack.config.dev.js --open"
+        "start": "webpack-dev-server --config webpack.config.dev.js --open"
     },
     "author": "Byron Lopez",
     "license": "ISC",
@@ -20,6 +20,8 @@
     },
     "dependencies": {
         "babel-preset-stage-2": "^6.24.1",
+        "lodash": "^4.17.4",
+        "node-uuid": "^1.4.8",
         "react": "^15.5.4",
         "react-dom": "^15.5.4",
         "react-redux": "^5.0.5",
